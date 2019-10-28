@@ -29,6 +29,7 @@
         position: relative;
         height: 100vh;
         width: 100vw;
+        background: indianred;
       }
       #hidden_files {
         display: none;
@@ -37,7 +38,8 @@
         margin: auto;
         border-radius: 50rem;
         width: 75%;
-        border: 3px dotted indianred;
+        border: 3px dotted white;
+        color:white;
         padding: 2rem;
         position: absolute;
         top: 50%;
@@ -54,11 +56,12 @@
       }
       #files_display{
           display: none;
-          background: indianred;
-          color: white;
+          background: white;
+          color: indianred;
           padding: 1rem;
           width: 80%;
           text-align: center;
+          border-radius: 50rem;
       }
     </style>
 
@@ -97,7 +100,7 @@
   <body>
     <section id="site_Wrapper">
       <div id="disclamer">
-        <h1>Sorry, only authorised personel can see this file.</h1>
+        <h1>Only authorised personel can see this file!</h1>
       </div>
 
       <div id="files_display" class="centered"></div>
