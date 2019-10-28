@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Secret Team File</title>
+    <meta name="description" content="Secret Team Site" />
+    <meta name="author" content="Jose, El Brogramador" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      #site_Wrapper {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
+      #hidden_files {
+        display: none;
+      }
+      #disclamer {
+        margin: auto;
+        border-radius: 50rem;
+        width: 75%;
+        border: 3px dotted indianred;
+        padding: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        text-align: center;
+      }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #files_display{
+          display: none;
+          background: indianred;
+          color: white;
+          padding: 1rem;
+          width: 80%;
+          text-align: center;
+      }
+    </style>
+
+    <script>
+      var authorised = false;
+      $(function() {
+        console.log(
+          "authorised = false\nTODO: change authorised to true when the user is authorised and remove this console log."
+        );
+
+        //Every 0.3 seconds, checks if the user is authorised.
+        function checkIfAuthorised() {
+          if (!authorised) {
+            setTimeout(checkIfAuthorised, 1000);
+            return;
+          } else {
+            // The user is authorised, display un-obfuscated file.
+            let a = "dif";
+            let b = "1h3j";
+            let c = "oc.txt";
+            let f = "File";
+            let n = "name: ";
+            let l = f + n + b + a + c;
+            let result = $("<div id='file'>" + l + "</div>");
+            let display = $("#files_display");
+            display.append(result);
+            display.show(true, 1000);
+            $("#disclamer").hide();
+          }
+        }
+        checkIfAuthorised();
+      });
+    </script>
+  </head>
+
+  <body>
+    <section id="site_Wrapper">
+      <div id="disclamer">
+        <h1>Sorry, only authorised personel can see this file.</h1>
+      </div>
+
+      <div id="files_display" class="centered"></div>
+    </section>
+  </body>
+</html>
