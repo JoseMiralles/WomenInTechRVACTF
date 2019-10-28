@@ -69,7 +69,7 @@
       var authorised = false;
       $(function() {
         console.log(
-          "authorised = false\nTODO: change authorised to true when the user is authorised and remove this console log."
+          "'authorised' is set to false.\nTODO: change 'authorised' to true when the user is authorised and remove this console log so that no one learns about our hidden file."
         );
 
         //Every 0.3 seconds, checks if the user is authorised.
@@ -79,16 +79,17 @@
             return;
           } else {
             // The user is authorised, display un-obfuscated file.
-            let a = "dif";
+            let a = "difoc.";
             let b = "1h3j";
-            let c = "oc.txt";
-            let f = "File";
-            let n = "name: ";
-            let l = f + n + b + a + c;
+            let c = "txt";
+            let f = "le na";
+            let g = "Fi"
+            let n = "me: ";
+            let l = g + f + n + b + a + c;
             let result = $("<div id='file'>" + l + "</div>");
             let display = $("#files_display");
             display.append(result);
-            display.show(true, 1000);
+            display.show();
             $("#disclamer").hide();
           }
         }
@@ -100,7 +101,7 @@
   <body>
     <section id="site_Wrapper">
       <div id="disclamer">
-        <h1>Only authorised personel can see this file!</h1>
+        <h2>Only authorised personel can see this file!</h2>
       </div>
 
       <div id="files_display" class="centered"></div>
